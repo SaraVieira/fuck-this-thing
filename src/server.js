@@ -2,6 +2,7 @@ import App from './App'
 import React from 'react'
 import { StaticRouter } from 'react-router-dom'
 import express from 'express'
+import { Helmet } from 'react-helmet'
 import { renderToString } from 'react-dom/server'
 import { ServerStyleSheet } from 'styled-components'
 
@@ -23,6 +24,7 @@ server
         </StaticRouter>
       )
     )
+    const helmet = Helmet.renderStatic()
     const styleTags = sheet.getStyleTags()
 
     if (context.url) {
@@ -30,11 +32,11 @@ server
     } else {
       res.status(200).send(
         `<!doctype html>
-    <html lang="">
+    <html lang="en" ${helmet.htmlAttributes.toString()}>
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta charset="utf-8" />
-        <title>Welcome to Razzle</title>
+        ${helmet.title.toString()}
         <meta name="viewport" content="width=device-width, initial-scale=1">
         ${
           assets.client.css
@@ -48,7 +50,7 @@ server
         }
         ${styleTags}
     </head>
-    <body class="avenir">
+    <body class="avenir" ${helmet.bodyAttributes.toString()}>
         <div id="root">${markup}</div>
     </body>
 </html>`

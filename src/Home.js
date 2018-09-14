@@ -1,6 +1,8 @@
 import React from 'react'
 import { Redirect } from 'react-router'
 import styled from 'styled-components'
+import { Helmet } from 'react-helmet'
+import { Twitter } from 'react-social-sharing'
 
 const Input = styled.input`
   border: 0;
@@ -29,6 +31,9 @@ class Home extends React.Component {
   render() {
     return (
       <main className="bg-gold sans-serif vh-100 vw-100 flex flex-column justify-center items-center">
+        <Helmet>
+          <title>I Fucking Hate</title>
+        </Helmet>
         <h3 className="f2 f1-m f-headline-l lh-title mv0 tc">
           <span className="bg-black-90 lh-copy white pa1 tracked-tight">
             <Form onSubmit={this.goToThing}>
