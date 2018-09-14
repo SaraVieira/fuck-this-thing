@@ -1,25 +1,6 @@
 import React from 'react'
 import { Redirect } from 'react-router'
-import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
-
-const Input = styled.input`
-  border: 0;
-  background: inherit;
-  color: white;
-  border-bottom: 4px solid white;
-  width: 400px;
-  height: 64px;
-  max-width: 70%;
-
-  @media screen and (min-width: 60em) {
-    height: 121px;
-  }
-`
-
-const Form = styled.form`
-  display: inline;
-`
 
 class Home extends React.Component {
   state = { thing: '', filled: false }
@@ -39,16 +20,16 @@ class Home extends React.Component {
         </Helmet>
         <h3 className="mw-100 f1 f1-m f-headline-l lh-title mv0 tc">
           <span className="bg-black-90 lh-copy white pa1 pl3 tracked-tight">
-            <Form onSubmit={this.goToThing}>
+            <form className="form" onSubmit={this.goToThing}>
               <label for="hate">I fucking hate</label>
-              <Input
-                className="f2 f1-m f-headline-l lh-title b pa2 pl4 ml3 mr3"
+              <input
+                className="input f2 f1-m f-headline-l lh-title b pa2 pl4 ml3 mr3"
                 onChange={this.addThing}
                 placeholder="Wizzair"
                 id="hate"
                 type="text"
               />
-            </Form>
+            </form>
           </span>
         </h3>
         {this.state.filled ? (

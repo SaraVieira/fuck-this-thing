@@ -1,11 +1,6 @@
 import React, { Fragment } from 'react'
 import { withRouter } from 'react-router'
 import { Helmet } from 'react-helmet'
-import styled from 'styled-components'
-
-const Img = styled.img`
-  max-width: 50%;
-`
 
 const getRelated = thing => thing.RelatedTopics[0] && thing.RelatedTopics[0]
 const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1)
@@ -66,8 +61,8 @@ class Home extends React.Component {
         {thing && thing.meta ? (
           <article className="flex flex-column justify-center items-center">
             {thing.Image || getRelated(thing).Icon.URL ? (
-              <Img
-                className="mb4 mt2"
+              <img
+                className="mb4 mt2 image"
                 alt={params.thing}
                 src={thing.Image || getRelated(thing).Icon.URL}
               />
