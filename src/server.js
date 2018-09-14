@@ -38,6 +38,7 @@ server
         <meta charset="utf-8" />
         ${helmet.title.toString()}
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
         ${
           assets.client.css
             ? `<link rel="stylesheet" href="${assets.client.css}">`
