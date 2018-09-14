@@ -1,12 +1,16 @@
 {
-  "name": "my-razzle-app",
-  "version": "2.0.0-alpha.8",
+  "name": "fuck-this-thing",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "start": "razzle start",
     "build": "razzle build",
-    "test": "razzle test --env=jsdom",
-    "start:prod": "NODE_ENV=production node build/server.js"
+    "now-start": "NODE_ENV=production node build/server.js",
+    "format": "prettier --write '**/*.{js,css,md}'",
+    "posttest": "npm run format"
+  },
+  "now": {
+    "alias": "fuckthis"
   },
   "dependencies": {
     "express": "^4.16.3",
@@ -17,5 +21,8 @@
     "react-router-dom": "^4.3.1",
     "styled-components": "^3.4.6",
     "tachyons": "^4.11.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.2"
   }
 }
