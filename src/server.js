@@ -50,7 +50,7 @@ server
         }
         ${styleTags}
     </head>
-    <body class="avenir" ${helmet.bodyAttributes.toString()}>
+    <body class="h-100 w-100 avenir" ${helmet.bodyAttributes.toString()}>
         <div id="root">${markup}</div>
     </body>
 </html>`

@@ -2,7 +2,6 @@ import React from 'react'
 import { Redirect } from 'react-router'
 import styled from 'styled-components'
 import { Helmet } from 'react-helmet'
-import { Twitter } from 'react-social-sharing'
 
 const Input = styled.input`
   border: 0;
@@ -10,8 +9,12 @@ const Input = styled.input`
   color: white;
   border-bottom: 4px solid white;
   width: 400px;
-  max-width: 100%;
-  height: 121px;
+  height: 64px;
+  max-width: 70%;
+
+  @media screen and (min-width: 60em) {
+    height: 121px;
+  }
 `
 
 const Form = styled.form`
@@ -34,13 +37,14 @@ class Home extends React.Component {
         <Helmet>
           <title>I Fucking Hate</title>
         </Helmet>
-        <h3 className="f2 f1-m f-headline-l lh-title mv0 tc">
-          <span className="bg-black-90 lh-copy white pa1 tracked-tight">
+        <h3 className="mw-100 f1 f1-m f-headline-l lh-title mv0 tc">
+          <span className="bg-black-90 lh-copy white pa1 pl3 tracked-tight">
             <Form onSubmit={this.goToThing}>
               <label for="hate">I fucking hate</label>
               <Input
-                className="f2 f1-m f-headline-l lh-title b pa2 pl4 ml3"
+                className="f2 f1-m f-headline-l lh-title b pa2 pl4 ml3 mr3"
                 onChange={this.addThing}
+                placeholder="Wizzair"
                 id="hate"
                 type="text"
               />

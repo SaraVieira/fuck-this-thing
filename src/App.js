@@ -10,6 +10,10 @@ import normalize from 'normalize.css'
 injectGlobal`
  ${tachyons}
  ${normalize}
+ body, html {
+   height: 100%;
+   width: 100%;
+ }
 .resp-sharing-button__link,
 .resp-sharing-button__icon {
   display: inline-block
