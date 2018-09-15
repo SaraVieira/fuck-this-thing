@@ -13,6 +13,7 @@ class Home extends React.Component {
   }
 
   render() {
+    const { filled, thing } = this.state
     return (
       <main className="bg-gold sans-serif vh-100 vw-100 flex flex-column justify-center items-center">
         <Helmet>
@@ -32,10 +33,10 @@ class Home extends React.Component {
             </form>
           </span>
         </h3>
-        {this.state.filled ? (
+        {filled ? (
           <Redirect
             to={{
-              pathname: `/${this.state.thing}`
+              pathname: `/${thing}`
             }}
           />
         ) : null}
