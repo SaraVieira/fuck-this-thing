@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { withRouter } from 'react-router'
 import { Helmet } from 'react-helmet'
 
-const getRelated = thing => thing.RelatedTopics[0] && thing.RelatedTopics[0]
+const getRelated = thing => thing.RelatedTopics && thing.RelatedTopics[0]
 const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1)
 
 const api = path =>
